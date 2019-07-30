@@ -2,7 +2,7 @@
 Project 2
 
 ## Group Members
-Jonathan Behar
-Arceny Castillo
-John Russo
-Austin Taranto
+Jonathan Behar <br>
+Arceny Castillo <br>
+John Russo <br>
+Austin Taranto <br>
