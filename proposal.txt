@@ -1,0 +1,8 @@
+Names: John Russo, Arceny Castillo, Jonathan Behar, Austin Taranto
+Team Name: JaJa
+Idea: Using api for Superhero battle game
+User: Nerds, Geeks, Avid fans, to settle debates once and for all because these things matter.
+Link to deployed heroku app: https://dashboard.heroku.com/apps/jaja-project2
+Link to kanban board (Zenhub, Trello, etc.): work in progress
+Tech to be used (including new tech, APIs, Architecture): Superheroapi.com
+Inital Development Plan (who will work on what full stack features): work in progress
