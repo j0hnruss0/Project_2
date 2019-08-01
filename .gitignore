@@ -3,4 +3,4 @@ node_modules
 npm-debug.log
 .env
 config.json
-config/config.js
+config/config.json
