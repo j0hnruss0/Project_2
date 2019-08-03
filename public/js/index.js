@@ -137,6 +137,7 @@ var draftHero = function(event) {
     $.post("/api/characters", hero, function() {
       console.log("Drafted!");
     });
+    
     data.teamSize += 1;
     API.increaseTeam(data).then(function(res) {
       console.log("your team size is now " + res.teamSize);

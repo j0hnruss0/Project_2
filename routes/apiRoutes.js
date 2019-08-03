@@ -41,17 +41,6 @@ module.exports = function(app) {
     });
   });
   //NON FUNCTIONING ROUTE, PUT REQUESTS-------------
-  app.put("/api/players", function(req, res) {
-    db.Player.update({
-      teamSize: req.body.teamSize
-    }, {
-      where: {
-        id: req.body.id
-      }
-    }).then(function(dbPlayers) {
-      res.json(dbPlayers);
-    });
-  });
 
   app.get("/api/characters", function(req, res) {
     db.Character.findAll({}).then(function(dbCharacters) {
