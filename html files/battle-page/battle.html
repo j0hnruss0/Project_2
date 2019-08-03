@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Battle Page</title>
+
+</head>
+
+<body>
+    <h1>Prepare for Battle!</h1>
+
+    <div class="columns">
+        <div class="column col-12 column-content">
+            
+            <p>
+            Create your own superhero battles to settle the score once and for all between those who challenge Earth's mightiest heros.
+            </p>
+
+            <p>
+            Choose up to 3 members for each team. A character can't be on both teams. 
+            </p>
+
+            <!-- <p>
+            <a href="/battle/create/" class="btn btn-success">Create new battle</a>
+            </p> -->
+
+            <form action="/battle/create/">
+                <button type="submit">Create New Battle</button>
+             </form>
+
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <div class="row">
+            // teams alreayd battling will be diplayed below
+            <div class="col-6 col-sm-12">Team 1 vs Team 2
+                <div class="block-holder"><div class="block battle">
+                    <a href="/superman-vs-thor/90-103/" class="block-source">Superman<span class="vs">vs</span>Thor</a>
+                </div>
+            </div>
+            <div class="col-6 col-sm-12">Team 3 vs Team 4
+                <div class="block battle">
+                    <a href="/batman-vs-superman/90-1/" class="block-source">Batman, Robin, Batgirl<span class="vs">vs</span>Superman, Wonder Woman, Green Lantern</a>
+                </div>
+            </div>
+      
+          <!-- Force next columns to break to new line at md breakpoint and up -->
+          <div class="w-100 d-none d-md-block"></div>
+      
+            <div class="col-6 col-sm-12">Team 5 vs Team 6
+                <div class="block battle">
+                    <a href="/iron-man-vs-batman/90-104/" class="block-source">Iron Man, Captain America, Thor<span class="vs">vs</span>Batman, Superman, Wonder Woman</a>
+                </div>
+            </div>
+            <div class="col-6 col-sm-12">Team 7 vs Team 8
+                <div class="block battle">
+                    <a href="/deadpool-vs-deathstroke/90-68/" class="block-source">Deadpool, Colossus, Negasonic Teenage Warhead<span class="vs">vs</span>Deathstroke, Ra's Al Ghul, Redhood</a>
+                </div>
+            </div>
+
+            <!-- Force next columns to break to new line at md breakpoint and up -->
+          <div class="w-100 d-none d-md-block"></div>
+
+            <div class="col-6 col-sm-12">Team 9 vs Team 10
+                <div class="block battle">
+                    <a href="/deadpool-vs-deathstroke/90-68/" class="block-source">Nick<span class="vs">vs</span>Yoan</a>
+                </div>
+            </div>
+        </div>
+    </div>            
+    
+</body>
+
+</html>
