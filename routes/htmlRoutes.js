@@ -3,10 +3,19 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Player.findAll({}).then(function(dbPlayers) {
       res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
+        msg: "Welcome to Superhero Draft!",
+        players: dbPlayers
+      });
+    });
+  });
+
+  app.get("/draft/:name", function(req, res) {
+    db.Player.findOne({ where: { name: req.params.name } }).then(function(dbExample) {
+      res.render("draft", {
+        msg: "Draft your Team!",
+        currentPlayer: dbExample
       });
     });
   });
