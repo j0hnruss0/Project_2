@@ -25,11 +25,12 @@ module.exports = function(app) {
   });
 
   app.get("/api/player/:name", function(req, res) {
-    db.Player.findOne({
+    db.Player.update({
+      teamSize: req.body.teamSize
+    }, {
       where: {
-        name: req.params.name
-      },
-      include: [db.Character]
+        id: req.body.id
+      }
     }).then(function(dbPlayers) {
       res.json(dbPlayers);
     });
