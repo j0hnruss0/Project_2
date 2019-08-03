@@ -5,7 +5,8 @@
     },
     "test": {
       "use_env_variable": "db_url",
-      "logging": false
+      "logging": false,
+      "dialect": "mysql"
     },
     "production": {
       "use_env_variable": "JAWSDB_URL",

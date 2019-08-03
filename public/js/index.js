@@ -95,7 +95,7 @@ var searchHeroes = function() {
 
   for (var i = 0; i < 20; i++) {
     $.ajax({
-      url: query + Math.floor((Math.random() * 731) + 1),
+      url: query + Math.floor(Math.random() * 731 + 1),
       method: "GET"
     }).then(function(res) {
       $("#draft-board").append(
@@ -118,11 +118,27 @@ var searchHeroes = function() {
 //NOT FUNCTIONING YET--------
 var draftHero = function(event) {
   event.preventDefault();
-  var heroName = $(this).find(".hero-name").text();
-  var heroPic = $(this).find(".hero-pic").attr("src");
-  var heroStr = parseInt($(this).find(".str").text());
-  var heroInt = parseInt($(this).find(".int").text());
-  var heroSkill = parseInt($(this).find(".skl").text());
+  var heroName = $(this)
+    .find(".hero-name")
+    .text();
+  var heroPic = $(this)
+    .find(".hero-pic")
+    .attr("src");
+  var heroStr = parseInt(
+    $(this)
+      .find(".str")
+      .text()
+  );
+  var heroInt = parseInt(
+    $(this)
+      .find(".int")
+      .text()
+  );
+  var heroSkill = parseInt(
+    $(this)
+      .find(".skl")
+      .text()
+  );
   var currentPlayer = window.location.pathname.split("/").pop();
   $.get("/api/player/" + currentPlayer, function(data) {
     console.log(data);
