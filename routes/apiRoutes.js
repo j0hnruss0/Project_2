@@ -25,11 +25,12 @@ module.exports = function(app) {
   });
 
   app.get("/api/player/:name", function(req, res) {
-    db.Player.findOne({
+    db.Player.update({
+      teamSize: req.body.teamSize
+    }, {
       where: {
-        name: req.params.name
-      },
-      include: [db.Character]
+        id: req.body.id
+      }
     }).then(function(dbPlayers) {
       res.json(dbPlayers);
     });
@@ -41,17 +42,6 @@ module.exports = function(app) {
     });
   });
   //NON FUNCTIONING ROUTE, PUT REQUESTS-------------
-  app.put("/api/players", function(req, res) {
-    db.Player.update({
-      teamSize: req.body.teamSize
-    }, {
-      where: {
-        id: req.body.id
-      }
-    }).then(function(dbPlayers) {
-      res.json(dbPlayers);
-    });
-  });
 
   app.get("/api/characters", function(req, res) {
     db.Character.findAll({}).then(function(dbCharacters) {
