@@ -1,11 +1,2 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
-
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
-
-DROP DATABASE IF EXISTS players_db;
-CREATE DATABASE players_db;
-
-DROP DATABASE IF EXISTS characters_db;
-CREATE DATABASE characters_db;
+DROP DATABASE IF EXISTS superhero_draft_db;
+CREATE DATABASE superhero_draft_dbdb;
