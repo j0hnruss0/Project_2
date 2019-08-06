@@ -1,0 +1,71 @@
+body{
+    /* background-image: url(https://img.freepik.com/free-vector/comic-style-versus-banner-template_23152-61.jpg?size=626&ext=jpg); */
+    background-image: url(https://media.giphy.com/media/557hkujHi9Idmj4vq4/source.gif);
+    /* background-size: cover;
+    position: center; */
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+p{
+    font-size: 25px;
+    color:white;
+}
+
+.columns{
+    text-align: center;
+}
+
+img{
+    height: 150px;
+    width: 200px;
+}
+
+#font-color{
+    color: white;
+}
+
+/* #left{
+    float: left;
+} */
+
+#right{
+    float: right;
+}
+
+/* #captian-marvel{
+    height: 50px; 
+    width: 50px;   
+    background-image:url(https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiv-sHq4ezjAhWsT98KHfBxDNQQjRx6BAgBEAU&url=https%3A%2F%2Fwww.express.co.uk%2Fentertainment%2Ffilms%2F964792%2FCaptain-Marvel-What-is-the-symbol-at-the-end-of-Avengers-Infinity-Wars-clark-gregg-shield&psig=AOvVaw2NYzQWEW_YQHfFjKNzL7z4&ust=1565130011482816);
+    background-repeat:repeat;
+} */
+
+/* #captain-marvel{
+    content:"";
+   position:absolute;
+   width:100%;
+   height:100%;
+   top:5px;
+   left:5px;
+   background: url(https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiv-sHq4ezjAhWsT98KHfBxDNQQjRx6BAgBEAU&url=https%3A%2F%2Fwww.express.co.uk%2Fentertainment%2Ffilms%2F964792%2FCaptain-Marvel-What-is-the-symbol-at-the-end-of-Avengers-Infinity-Wars-clark-gregg-shield&psig=AOvVaw2NYzQWEW_YQHfFjKNzL7z4&ust=1565130011482816) repeat;
+   z-index:-1;
+} */
+
+/* .submit{ */
+    /* content:"";
+   position:absolute;
+   width:20px;
+   height:20px;
+   top:5px;
+   left:5px;
+   background: url(https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiv-sHq4ezjAhWsT98KHfBxDNQQjRx6BAgBEAU&url=https%3A%2F%2Fwww.express.co.uk%2Fentertainment%2Ffilms%2F964792%2FCaptain-Marvel-What-is-the-symbol-at-the-end-of-Avengers-Infinity-Wars-clark-gregg-shield&psig=AOvVaw2NYzQWEW_YQHfFjKNzL7z4&ust=1565130011482816) repeat;
+   z-index:-1; */
+/* } */
