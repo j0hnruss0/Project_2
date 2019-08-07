@@ -12,19 +12,57 @@ module.exports = function(app) {
   });
 
   app.get("/draft/:name", function(req, res) {
-    db.Player.findOne({ where: { name: req.params.name } }).then(function(dbExample) {
-      res.render("draft", {
-        msg: "Draft your Team!",
-        currentPlayer: dbExample
+    db.Player.findOne({
+      where: { name: req.params.name },
+      include: [db.Character]
+    }).then(function(dbPlayer) {
+      if (dbPlayer.loggedIn === true) {
+        res.render("draft", {
+          msg: "Draft your Team!",
+          currentPlayer: dbPlayer
+        });
+      } else {
+        res.render("no-login", {
+          msg: "You cannot access this page!"
+        });
+      }
+    });
+  });
+
+  app.get("/battle/:name", function(req, res) {
+    db.Player.findOne({
+      where: { name: req.params.name },
+      include: [db.Character]
+    }).then(function(dbPlayer) {
+      if (dbPlayer.loggedIn === true) {
+        res.render("battle", {
+          msg: "Time to Battle!",
+          currentPlayer: dbPlayer
+        });
+      } else {
+        res.render("no-login", {
+          msg: "You cannot access this page!"
+        });
+      }
+    });
+  });
+
+  app.get("/survey", function(req, res) {
+    db.Character.findAll({}).then(function(dbCharacters) {
+      res.render("survey", {
+        msg: "Take the survey!",
+        characters: dbCharacters
       });
     });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
+  app.get("/logout/:name", function(req, res) {
+    db.Player.findOne({
+      where: { name: req.params.name }
+    }).then(function(dbPlayer) {
+      res.render("logout", {
+        msg: "Come back again!",
+        player: dbPlayer
       });
     });
   });

@@ -1,13 +1,82 @@
+<nav class="navbar navbar-expand-lg">
+    <ul class="navbar-nav ml-auto flex-row">
+        <li class="nav-item">
+            <a class="nav-link" href=/battle/{{currentPlayer.name}}>Battle</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/survey">Survey</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href=/logout/{{currentPlayer.name}}>Logout</a>
+        </li>
+    </ul>
+</nav>
 <div class="container">
     <div class="row">
-        <div class="col-8 offset-2">
+        <div class="col-5 offset-1">
             <h1>Hello {{currentPlayer.name}}!!</h1>
             <h2>{{msg}}</h2>
             <button id="find-heroes" class="btn btn-primary">Up, up, and away!</button>
-            <hr>
-            <div id="draft-board">
-                <!--found characters go here-->
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4>{{currentPlayer.name}}'s team</h4>
+                    <ul id="lineup">
+                        {{#each currentPlayer.Characters}}
+                            <li style='list-style-type: none;'><img class='hero-pic' src={{currentPlayer.Characters.pic}} alt='photo not found' style='height: 50px;' class='img-thumbnail rounded-circle'>{{name}}&nbsp;&nbsp;&nbsp;<button id={{name}} class="btn delete-hero">Delete</button></li>
+                        {{/each}}
+                    </ul>
+                </div>
             </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div id="draft-board" class="col-8">
+            <!--found characters go here-->
+        </div>
+    </div>
+    <div class="row">
+        <div id="custom-board" class="col-8">
+            <h3>Make your own team!</h3>
+            <form>
+                <div class="form-group">
+                    <label for="nameHelp">Hero Name</label>
+                    <input type="text" class="form-control" id="custom-name" aria-describedby="nameHelp" placeholder="Enter name">
+                    <small id="nameHelp" class="form-text text-muted">Use a known hero or be creative!</small>
+                </div>
+                <div class="form-group">
+                    <label for="picHelp">Picture</label>
+                    <input type="text" class="form-control" id="custom-pic" aria-describedby="picHelp" placeholder="Enter pic">
+                    <small id="picHelp" class="form-text text-muted">Find a good pic!</small>
+                </div>
+                <div class="form-group">
+                    <label for="str-pick">Character strength</label>
+                    <select class="form-control" id="str-pick">
+                        <option>Strongest stat</option>
+                        <option>Average stat</option>
+                        <option>Weakest stat</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="int-pick">Character Intelligence</label>
+                    <select class="form-control" id="int-pick">
+                        <option>Strongest stat</option>
+                        <option>Average stat</option>
+                        <option>Weakest stat</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="skl-pick">Character Skill</label>
+                    <select class="form-control" id="skl-pick">
+                        <option>Strongest stat</option>
+                        <option>Average stat</option>
+                        <option>Weakest stat</option>
+                    </select>
+                </div>
+                <button type="submit" id="alt-draft" class="btn btn-primary">Create your Hero!</button>
+            </form>
         </div>
     </div>
 </div>

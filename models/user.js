@@ -17,6 +17,13 @@ module.exports = function(sequelize, DataTypes) {
     teamSize: {
       type: DataTypes.INTEGER,
       allowNull: false
+    },
+    loggedIn: {
+      type: DataTypes.BOOLEAN
+    },
+    status: {
+      type: DataTypes.ENUM("active", "inactive"),
+      defaultValue: "active"
     }
   });
 
