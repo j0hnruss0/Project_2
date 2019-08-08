@@ -1,8 +1,4 @@
 var db = require("../models");
-var jwt = require('jsonwebtoken'); //---AUTH TOKEN
-var tokenList = {}; //---AUTH TOKEN
-var config = require(__dirname + "/../config/config.json")[env] //---AUTH TOKEN
-var env = process.env.NODE_ENV || "development"; //---AUTH TOKEN
 
 module.exports = function(app) {
   //NEW ROUTES --------------------------------
@@ -13,10 +9,10 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/players/:id", function(req, res) {
+  app.get("/api/player/:name", function(req, res) {
     db.Player.findOne({
       where: {
-        id: req.params.id
+        name: req.params.name
       },
       include: [db.Character]
     }).then(function(dbPlayers) {
@@ -24,14 +20,62 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/player/:name", function(req, res) {
-    db.Player.update({
-      teamSize: req.body.teamSize
-    }, {
-      where: {
-        id: req.body.id
+  app.put("/api/player-team-boost/:id", function(req, res) {
+    db.Player.increment(
+      {
+        teamSize: 1
+      },
+      {
+        where: {
+          id: req.params.id
+        }
       }
-    }).then(function(dbPlayers) {
+    ).then(function(dbPlayers) {
+      res.json(dbPlayers);
+    });
+  });
+
+  app.put("/api/player-team-cut/:id", function(req, res) {
+    db.Player.decrement(
+      {
+        teamSize: 1
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+    ).then(function(dbPlayers) {
+      res.json(dbPlayers);
+    });
+  });
+
+  app.put("/api/player/logout/:name", function(req, res) {
+    db.Player.update(
+      {
+        loggedIn: false
+      },
+      {
+        where: {
+          name: req.params.name
+        }
+      }
+    ).then(function(dbPlayers) {
+      res.json(dbPlayers);
+    });
+  });
+
+  app.put("/api/player/login/:name", function(req, res) {
+    db.Player.update(
+      {
+        loggedIn: true
+      },
+      {
+        where: {
+          name: req.params.name
+        }
+      }
+    ).then(function(dbPlayers) {
       res.json(dbPlayers);
     });
   });
@@ -41,7 +85,6 @@ module.exports = function(app) {
       res.json(dbPlayers);
     });
   });
-  //NON FUNCTIONING ROUTE, PUT REQUESTS-------------
 
   app.get("/api/characters", function(req, res) {
     db.Character.findAll({}).then(function(dbCharacters) {
@@ -62,6 +105,22 @@ module.exports = function(app) {
       }
     }).then(function(dbCharacters) {
       res.json(dbCharacters);
+    });
+  });
+
+  app.delete("/api/character/:name", function(req, res) {
+    db.Character.destroy({
+      where: {
+        name: req.params.name
+      }
+    }).then(function(dbCharacters) {
+      res.json(dbCharacters);
+    });
+  });
+
+  app.get("/api/undrafted", function(req, res) {
+    db.Undrafted.findAll({}).then(function(dbUndrafted) {
+      res.json(dbUndrafted);
     });
   });
 };
