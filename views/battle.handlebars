@@ -1,0 +1,141 @@
+<div id="battle-page">
+    <h1 id="battle-title">{{msg}}, {{currentPlayer.name}}!</h1>
+
+    <div class="columns">
+        <div class="column col-12 column-content battle-content">
+            
+            <p class="battle-p">
+            Create your own superhero battles to settle the score once and for all between those who challenge Earth's mightiest heros.
+            </p>
+
+            <p class="battle-p">
+            Choose up to 3 members for each team. A character can't be on both teams. 
+            </p>
+
+            <!-- <p>
+            <a href="/battle/create/" class="btn btn-success">Create new battle</a>
+            </p> -->
+
+            <form action="/battle/create/">
+                <button type="submit" id="new-battle">Create New Battle</button>
+            </form>
+
+            <br>
+
+            <div action="fight">
+                <button type="submit" id="fight">Fight!</button>
+            </div>
+
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container battle-content">
+        <div class="row">
+            <!-- teams already battling will be displayed below-->
+            <div class="col-6 col-sm-12">
+                <div class="hero" action="submit" id="captainmarvel">
+
+                    <div id="radio0">
+                        <input type="radio" id="left">
+                            <img class="battle-img" src="https://images.spot.im/v1/production/gicotcoeh5q5bbknfzsm" id="Captain-Marvel" alt="Captain Marvel">
+                        </input>
+                        
+                        <input type="radio" id="right">
+                            <img class="battle-img" src="https://i.pinimg.com/474x/57/d1/4c/57d14c807e412ee1d42b0effb245794e--superman-symbol-superman-superman.jpg" id="Superman" alt="Superman">
+                        </input>
+                    </div>
+                </div>
+
+            </div>
+
+            <br>
+
+            <div class="col-6 col-sm-12">
+
+                <div class="hero" action="submit" id="batman">
+
+                    <div id="radio1">
+                        <input type="radio" id="left2">
+                            <img class="battle-img" src="data:image/png;base64,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" id="Batman" alt="Batman">
+                        </input>
+                    
+                        <input type="radio" id="right2">
+                            <img class="battle-img" src="https://i.pinimg.com/474x/57/d1/4c/57d14c807e412ee1d42b0effb245794e--superman-symbol-superman-superman.jpg" id="Superman2" alt="Superman">
+                        </input>
+                    </div>
+
+                </div>
+
+                <!-- <div class="block-battle">
+                    <a href="/batman-vs-superman/90-1/" class="block-source" id="font-color"><strong>Batman, Robin, Batgirl</strong><span class="vs">vs</span><strong>Superman, Wonder Woman, Green Lantern</strong></a>
+                </div> -->
+            </div>
+
+            <br>
+    
+        <!-- Force next columns to break to new line at md breakpoint and up -->
+        <div class="w-100 d-none d-md-block"></div>
+
+            <div class="col-6 col-sm-12">
+
+                <div class="hero" action="submit" id="ironman">
+    
+                        <div id="radio3">
+                            <input type="radio" id="left3">
+                                <img class="battle-img" src="https://www.pngfind.com/pngs/m/554-5547506_iron-man-symbol-iron-man-logo-partylabels-party.png" id="Iron-Man" alt="Iron Man">
+                                
+                            </input>
+                    
+                            <input type="radio" id="right3">
+                                <img class="battle-img" src="https://i.etsystatic.com/13611577/r/il/a5aead/1477057311/il_794xN.1477057311_ai5r.jpg" id="Black-Panther" alt="Black Panther">
+                            </input>
+                        </div>
+    
+                </div>
+    
+            </div>
+
+            <br>
+
+            <!-- <div class="col-6 col-sm-12">
+                    <div class="hero" action="submit" id="left4" alt="Deadpool">
+                            <button type="submit">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/512tW-%2BQYnL._SX425_.jpg" id="Deadpool">
+                            </button>
+                            <button type="submit" id="right4" alt="X-Men">
+                                <img src="https://www.patchcollection.com/media/catalog/product/cache/1/image/1200x/040ec09b1e35df139433887a97daa66f/x/m/xman-school-2.jpg" id="X-Men">
+                            </button>
+                        </div>
+                <div class="block-battle">
+                    <a href="/deadpool-vs-deathstroke/90-68/" class="block-source" id="font-color"><strong>Deadpool, Colossus, Negasonic Teenage Warhead</strong><span class="vs">vs</span><strong>Professor X, Cyclops, Storm</strong></a>
+                </div>
+            </div> -->
+
+            <div class="col-6 col-sm-12">
+
+                <div class="hero" action="submit" id="deadpool">
+        
+                    <div id="radio5">
+                        <input type="radio" id="left4">
+                        <img class="battle-img" src="https://images-na.ssl-images-amazon.com/images/I/512tW-%2BQYnL._SX425_.jpg" id="Deadpool" alt="Deadpool">
+                        </input>
+                    
+                        <input type="radio" id="right4">
+                        <img class="battle-img" src="https://www.patchcollection.com/media/catalog/product/cache/1/image/1200x/040ec09b1e35df139433887a97daa66f/x/m/xman-school-2.jpg" id="X-Men" alt="X-Men">
+                        </input>
+                    </div>
+        
+                </div>
+        
+                        <!-- <div class="block-battle">
+                            <a href="/batman-vs-superman/90-1/" class="block-source" id="font-color"><strong>Batman, Robin, Batgirl</strong><span class="vs">vs</span><strong>Superman, Wonder Woman, Green Lantern</strong></a>
+                        </div> -->
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+
