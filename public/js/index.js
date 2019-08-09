@@ -262,14 +262,15 @@ var makeHero = function(event) {
         data.teamSize += 1;
         $.post("/api/characters", hero, function() {
           console.log("Drafted!");
-        });
-        $.ajax({
-          url: "../api/player-team-boost/" + data.id,
-          type: "PUT",
-          data: data.id
         }).then(function() {
-          console.log("your team size is now " + data.teamSize);
-          currentRoster(currentPlayer);
+          $.ajax({
+            url: "../api/player-team-boost/" + data.id,
+            type: "PUT",
+            data: data.id
+          }).then(function() {
+            console.log("your team size is now " + data.teamSize);
+            currentRoster(currentPlayer);
+          });
         });
         $(".picked-card").remove();
       } else if (data.teamSize >= 3) {
