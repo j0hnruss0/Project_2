@@ -1,10 +1,9 @@
-// var selectedHeroes = [];
 function selectHeros(event) {
   var heroes = $("input[type='radio']:checked");
   // $(heroes).animate({
   //   marginLeft: "2%",
   // });
-  for(let i = 0; i< heroes.length;  i++){
+  for(var i = 0; i< heroes.length;  i++){
     if($(heroes[i]).hasClass('captainmarvel')){
       captainmarvelAnimate();
 
@@ -25,7 +24,7 @@ function selectHeros(event) {
     });
   }
 
-  for(let j = 0; j< heroes.length;  j++){
+  for(var j = 0; j< heroes.length;  j++){
     if($(heroes[j]).hasClass('batman')){
       batmanAnimate();
 
@@ -46,7 +45,7 @@ function selectHeros(event) {
     });
   }
 
-  for(let e = 0; e< heroes.length;  e++){
+  for(var e = 0; e< heroes.length;  e++){
     if($(heroes[e]).hasClass('ironman')){
       ironmanAnimate();
 
@@ -87,72 +86,41 @@ function selectHeros(event) {
       marginLeft: "14%",
     });
   }
-  
- 
-  /**
-   * read the input selection value
-   * add superhero selected to global array
-   * superhero and which side
-   */
-}
-
-// $( "#fight" ).click(function() {
-
-//   /** (input === 2)
-//    * checks if any superhero selected, at least 2. both should have same amount selected
-//    * if so, animate them
-//    * if not, display message that heros need to be selected
-//    */
-
-// }
-
-
-// $( "#fight" ).click(function(event) {
-//   selectHeros(event);
-  // $( "#captainmarvel" ).animate({
-  //   width: "60%",
-  //   opacity: 0.8,
-  //   marginLeft: "0.6in",
-  //   borderWidth: "10px"
-  // }, 1500 );
-// });
+};
 
 $( "#fight" ).on('click', selectHeros);
-  
-  // $( "#captainmarvel" ).animate({
-  //   width: "60%",
-  //   opacity: 0.8,
-  //   marginLeft: "0.6in",
-  //   borderWidth: "10px"
-  // }, 1500 );
-// });
 
-// $( "#fight" ).click(function() {
-//   $( "#batman" ).animate({
-//     width: "80%",
-//     opacity: 0.6,
-//     marginLeft: "0.2in",
-//     borderWidth: "10px"
-//   }, 1500 );
-// });
+$("#new-battle").on("click", function() {
+  var currentPlayer = window.location.pathname.split("/").pop();
+  $.ajax({
+    url: "../api/players",
+    type: "GET"
+  }).then(function(data) {
+    $("#opponent-buttons").empty();
+    for (var i = 0; i < data.length; i++) {
+      if (data[i].name !== currentPlayer && data[i].teamSize === 3) {
+        $("#opponent-buttons").append(
+          "<button class='btn btn-danger opp-button'>" +
+            data[i].name +
+            "</button>"
+        );
+      }
+    }
+  });
+});
 
-// $( "#fight" ).click(function() {
-//   $( "#ironman" ).animate({
-//     width: "50%",
-//     opacity: 0.7,
-//     marginLeft: "4.0in",
-//     borderWidth: "10px"
-//   }, 1500 );
-// });
-
-// $( "#fight" ).click(function() {
-//   $( "#deadpool" ).animate({
-//     width: "40%",
-//     opacity: 0.5,
-//     marginLeft: "1.5in",
-//     borderWidth: "10px"
-//   }, 1500 );
-// });
+$(document).on("click", ".opp-button", function() {
+  console.log($(this).text());
+  var opponent = $(this).text();
+  $.ajax({
+    url: "../api/player/" + opponent,
+    type: "GET"
+  }).then(function(oppData) {
+    $("#Superman").attr("src", oppData.Characters[0].pic);
+    $("#Superman2").attr("src", oppData.Characters[1].pic);
+    $("#Black-Panther").attr("src", oppData.Characters[2].pic);
+  });
+});
 
 // $( "#left" ).click(function() {
 //     $( "#Captain-Marvel" ).animate({

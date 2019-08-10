@@ -24,7 +24,7 @@
                     <h4>{{currentPlayer.name}}'s team</h4>
                     <ul id="lineup">
                         {{#each currentPlayer.Characters}}
-                            <li style='list-style-type: none;'><img class='hero-pic' src={{currentPlayer.Characters.pic}} alt='photo not found' style='height: 50px;' class='img-thumbnail rounded-circle'>{{name}}&nbsp;&nbsp;&nbsp;<button id={{name}} class="btn delete-hero">Delete</button></li>
+                            <li style='list-style-type: none;'><img class='hero-pic' src={{pic}} alt='photo not found' style='height: 50px;' class='img-thumbnail rounded-circle'>{{name}}&nbsp;&nbsp;&nbsp;<button id={{name}} class="btn delete-hero">Delete</button></li>
                         {{/each}}
                     </ul>
                 </div>
