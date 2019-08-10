@@ -1,0 +1,43 @@
+body {
+    background-image: url(https://media.istockphoto.com/vectors/comics-rays-background-with-halftones-vector-summer-backdrop-vector-id925420310?k=6&m=925420310&s=612x612&w=0&h=mz3SjaMJRwCXtpMUxRGUgAr-W-eQzF1j4CCokszQwEQ=);
+    background-size: 100% 100%;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    font-family: Marvel; font-size: 30px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 33px; } h3 { font-family: Marvel; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Marvel; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Marvel; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Marvel; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
+}
+
+/* h1 { font-family: Marvel; font-size: 30px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 33px; } h3 { font-family: Marvel; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Marvel; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Marvel; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Marvel; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; } */
+
+
+h2{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+
+a {
+    color: orange;
+}
+
+
+.columns{
+    text-align: center;
+}
+
+img{
+    height: 150px;
+    width: 100px;
+}
+
+.form-group{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+
+.buttons{
+    text-align: center;
+}
