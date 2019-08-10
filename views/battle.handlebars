@@ -1,0 +1,144 @@
+<div id="battle-page">
+    <h1 id="battle-title">{{msg}}, {{currentPlayer.name}}!</h1>
+
+    <div class="columns">
+        <div class="column col-12 column-content battle-content">
+            
+            <p class="battle-p">
+            Create your own superhero battles to settle the score once and for all between those who challenge Earth's mightiest heros.
+            </p>
+
+            <p class="battle-p">
+            Choose up to 3 members for each team. A character can't be on both teams. 
+            </p>
+
+            <!-- <p>
+            <a href="/battle/create/" class="btn btn-success">Create new battle</a>
+            </p> -->
+
+            <form action="new-battle">
+                <button type="submit" id="new-battle">Create New Battle</button>
+            </form>
+            <div id="opponent-buttons"></div>
+
+            <br>
+
+            <div action="fight">
+                <button type="submit" id="fight">Fight!</button>
+            </div>
+
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container battle-content">
+        <div class="row">
+            <!-- teams already battling will be displayed below-->
+            <div class="col-6 col-sm-12">
+                <div class="hero" action="submit" id="captainmarvel">
+
+                    <div id="radio0">
+                        <input class="captainmarvel" type="radio" id="left">
+                            <img class="battle-img" src={{currentPlayer.Characters.0.pic}} id="Captain-Marvel" alt="Captain Marvel">
+                        </input>
+                        
+                        <input class="superman" type="radio" id="right">
+                            <img class="battle-img" src="https://i.pinimg.com/474x/57/d1/4c/57d14c807e412ee1d42b0effb245794e--superman-symbol-superman-superman.jpg" id="Superman" alt="Superman">
+                        </input>
+                    </div>
+                </div>
+
+            </div>
+
+            <br>
+
+            <div class="col-6 col-sm-12">
+
+                <div class="hero" action="submit" id="batman">
+
+                    <div id="radio1">
+                        <input class="batman" type="radio" id="left2">
+                            <img class="battle-img" src={{currentPlayer.Characters.1.pic}} id="Batman" alt="Batman">
+                        </input>
+                    
+                        <input class="superman2" type="radio" id="right2">
+                            <img class="battle-img" src="https://i.pinimg.com/474x/57/d1/4c/57d14c807e412ee1d42b0effb245794e--superman-symbol-superman-superman.jpg" id="Superman2" alt="Superman">
+                        </input>
+                    </div>
+
+                </div>
+
+                <!-- <div class="block-battle">
+                    <a href="/batman-vs-superman/90-1/" class="block-source" id="font-color"><strong>Batman, Robin, Batgirl</strong><span class="vs">vs</span><strong>Superman, Wonder Woman, Green Lantern</strong></a>
+                </div> -->
+            </div>
+
+            <br>
+    
+        <!-- Force next columns to break to new line at md breakpoint and up -->
+        <div class="w-100 d-none d-md-block"></div>
+
+            <div class="col-6 col-sm-12">
+
+                <div class="hero" action="submit" id="ironman">
+    
+                        <div id="radio3">
+                            <input class="ironman" type="radio" id="left3">
+                                <img class="battle-img" src={{currentPlayer.Characters.2.pic}} id="Iron-Man" alt="Iron Man">
+                                
+                            </input>
+                    
+                            <input class="blackpanther" type="radio" id="right3">
+                                <img class="battle-img" src="https://i.etsystatic.com/13611577/r/il/a5aead/1477057311/il_794xN.1477057311_ai5r.jpg" id="Black-Panther" alt="Black Panther">
+                            </input>
+                        </div>
+    
+                </div>
+    
+            </div>
+
+            <br>
+
+            <!-- <div class="col-6 col-sm-12">
+                    <div class="hero" action="submit" id="left4" alt="Deadpool">
+                            <button type="submit">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/512tW-%2BQYnL._SX425_.jpg" id="Deadpool">
+                            </button>
+                            <button type="submit" id="right4" alt="X-Men">
+                                <img src="https://www.patchcollection.com/media/catalog/product/cache/1/image/1200x/040ec09b1e35df139433887a97daa66f/x/m/xman-school-2.jpg" id="X-Men">
+                            </button>
+                        </div>
+                <div class="block-battle">
+                    <a href="/deadpool-vs-deathstroke/90-68/" class="block-source" id="font-color"><strong>Deadpool, Colossus, Negasonic Teenage Warhead</strong><span class="vs">vs</span><strong>Professor X, Cyclops, Storm</strong></a>
+                </div>
+            </div> -->
+
+            <div class="col-6 col-sm-12">
+
+                <div class="hero" action="submit" id="deadpool">
+        
+                    <div id="radio5">
+                        <input class="deadpool" type="radio" id="left4">
+                        <img class="battle-img" src="https://images-na.ssl-images-amazon.com/images/I/512tW-%2BQYnL._SX425_.jpg" id="Deadpool" alt="Deadpool">
+                        </input>
+                    
+                        <input class="xmen" type="radio" id="right4">
+                        <img class="battle-img" src="https://www.patchcollection.com/media/catalog/product/cache/1/image/1200x/040ec09b1e35df139433887a97daa66f/x/m/xman-school-2.jpg" id="X-Men" alt="X-Men">
+                        </input>
+                    </div>
+        
+                </div>
+        
+                        <!-- <div class="block-battle">
+                            <a href="/batman-vs-superman/90-1/" class="block-source" id="font-color"><strong>Batman, Robin, Batgirl</strong><span class="vs">vs</span><strong>Superman, Wonder Woman, Green Lantern</strong></a>
+                        </div> -->
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/battle.js"></script>
+

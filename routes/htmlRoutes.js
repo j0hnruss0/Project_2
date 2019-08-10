@@ -36,7 +36,7 @@ module.exports = function(app) {
     }).then(function(dbPlayer) {
       if (dbPlayer.loggedIn === true) {
         res.render("battle", {
-          msg: "Time to Battle!",
+          msg: "Prepare for Battle",
           currentPlayer: dbPlayer
         });
       } else {
