@@ -1,41 +1,94 @@
-$("#fight").click(function() {
-  $("#captainmarvel").animate(
-    {
-      width: "60%",
-      opacity: 0.4,
-      marginLeft: "0.6in",
-      borderWidth: "10px"
-    },
-    1500
-  );
-});
+function selectHeros(event) {
+  var heroes = $("input[type='radio']:checked");
+  // $(heroes).animate({
+  //   marginLeft: "2%",
+  // });
+  for(var i = 0; i< heroes.length;  i++){
+    if($(heroes[i]).hasClass('captainmarvel')){
+      captainmarvelAnimate();
 
-$( "#fight" ).click(function() {
-  $( "#batman" ).animate({
-    width: "60%",
-    opacity: 0.4,
-    marginLeft: "0.6in",
-    borderWidth: "10px"
-  }, 1500 );
-});
+    }else if($(heroes[i]).hasClass('superman')){
+      supermanAnimate();
+    }
+  }
 
-$( "#fight" ).click(function() {
-  $( "#ironman" ).animate({
-    width: "60%",
-    opacity: 0.4,
-    marginLeft: "0.6in",
-    borderWidth: "10px"
-  }, 1500 );
-});
+  function captainmarvelAnimate(){
+    $( ".captainmarvel" ).animate({
+      marginLeft: "15%",
+    });
+  }
 
-$( "#fight" ).click(function() {
-  $( "#deadpool" ).animate({
-    width: "60%",
-    opacity: 0.4,
-    marginLeft: "0.6in",
-    borderWidth: "10px"
-  }, 1500 );
-});
+  function supermanAnimate(){
+    $( ".superman" ).animate({
+      marginLeft: "25%",
+    });
+  }
+
+  for(var j = 0; j< heroes.length;  j++){
+    if($(heroes[j]).hasClass('batman')){
+      batmanAnimate();
+
+    }else if($(heroes[j]).hasClass('superman2')){
+      superman2Animate();
+    }
+  }
+
+  function batmanAnimate(){
+    $( ".batman" ).animate({
+      marginLeft: "10%",
+    });
+  }
+
+  function superman2Animate(){
+    $( ".superman2" ).animate({
+      marginLeft: "35%",
+    });
+  }
+
+  for(var e = 0; e< heroes.length;  e++){
+    if($(heroes[e]).hasClass('ironman')){
+      ironmanAnimate();
+
+    }else if($(heroes[e]).hasClass('blackpanther')){
+      blackpantherAnimate();
+    }
+  }
+
+  function ironmanAnimate(){
+    $( ".ironman" ).animate({
+      marginLeft: "32%",
+    });
+  }
+
+  function blackpantherAnimate(){
+    $( ".blackpanther" ).animate({
+      marginLeft: "20%",
+    });
+  }
+
+  for(let k = 0; k< heroes.length;  k++){
+    if($(heroes[k]).hasClass('deadpool')){
+      deadpoolAnimate();
+
+    }else if($(heroes[k]).hasClass('xmen')){
+      xmenAnimate();
+    }
+  }
+
+  function deadpoolAnimate(){
+    $( ".deadpool" ).animate({
+      marginLeft: "30%",
+    });
+  }
+
+  function xmenAnimate(){
+    $( ".xmen" ).animate({
+      marginLeft: "14%",
+    });
+  }
+};
+
+$( "#fight" ).on('click', selectHeros);
 
 $("#new-battle").on("click", function() {
   var currentPlayer = window.location.pathname.split("/").pop();
